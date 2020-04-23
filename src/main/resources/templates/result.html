@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Spring boot Upload file</title>
+</head>
+<body>
+<h2 th:text="${message}"></h2>
+
+<br/>
+
+<img th:if="${imageName}" th:src="|image/${imageName}|" alt = "Error" >
+
+<br/>
+
+<a href="/">Back to Upload page</a>
+</body>
+</html>
