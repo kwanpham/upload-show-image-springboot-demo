@@ -5,7 +5,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -14,8 +13,6 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.text.SimpleDateFormat;
-import java.util.Date;
 
 /**
  * Created by https://github.com/kwanpham
@@ -23,7 +20,8 @@ import java.util.Date;
 @Controller
 public class UploadImageController {
 
-
+    //Thu muc chua anh
+    public static final String DOWNLOAD_PATH = "C:\\images";
 
     @GetMapping("/")
     public String index() {
@@ -41,7 +39,7 @@ public class UploadImageController {
             return "result";
         }
 
-        // Doi ten anh theo time upload , co the boi den dong nay neu khong can
+        // Doi ten anh theo time upload
         imageName = ImageUploadUtils.getFakeImageName(imageName);
 
         Path path = Paths.get(ImageUploadUtils.getFolderUpload().getAbsolutePath() + File.separator + imageName);

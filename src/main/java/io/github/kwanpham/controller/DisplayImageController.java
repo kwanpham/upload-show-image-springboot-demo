@@ -20,6 +20,6 @@ public class DisplayImageController {
     @GetMapping("/image/{imageName}")
     public void showImage(@PathVariable("imageName") String imageName , HttpServletResponse response) throws IOException {
         // Truyen du lieu cho response voi java >= 1.7
-        Files.copy(Paths.get(ImageUploadUtils.DOWNLOAD_PATH+ File.separator+imageName), response.getOutputStream());
+        Files.copy(Paths.get(UploadImageController.DOWNLOAD_PATH+ File.separator+imageName), response.getOutputStream());
     }
 }

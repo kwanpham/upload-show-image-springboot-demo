@@ -32,12 +32,13 @@ public class UploadImageRestController {
             return ResponseEntity.badRequest().body("This is not an image format !");
         }
 
-        // Doi ten anh theo time upload , co the boi den dong nay neu khong can
+        // Doi ten anh theo time upload
         imageName = ImageUploadUtils.getFakeImageName(imageName);
 
         Path path = Paths.get(ImageUploadUtils.getFolderUpload().getAbsolutePath() + File.separator + imageName);
         Files.copy(multipartFile.getInputStream() , path);
 
+        //Lay uri tra ve client
         String imageUri = ServletUriComponentsBuilder.fromCurrentContextPath()
                 .path("/image/")
                 .path(imageName)

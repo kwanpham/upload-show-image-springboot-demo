@@ -4,12 +4,12 @@ import java.io.File;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
+import static io.github.kwanpham.controller.UploadImageController.DOWNLOAD_PATH;
+
 /**
  * Created by https://github.com/kwanpham
  */
 public class ImageUploadUtils {
-
-    public static final String DOWNLOAD_PATH = "C:\\images";
 
     public static boolean validateImage(String imageName) {
         {
